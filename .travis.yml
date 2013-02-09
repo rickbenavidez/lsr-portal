@@ -1,0 +1,26 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - ruby-head
+matrix:
+  allow_failures:
+    - rvm: ruby-head
+# services:
+before_install:
+#  - sudo apt-get install -qq nmap
+before_script:
+  - sh -c 'cp config/database.travis.yml config/database.yml'
+  - psql -c 'create database lsrportal_test;' -U postgres
+  - bundle exec rake db:setup
+  - 'export DISPLAY=:99' # display port variable used by xvfb
+  - 'sh -e /etc/init.d/xvfb start' # for running GUI (firefox) acceptance tests (turnip/capybara/cucumber)
+# bundler_args: --without development
+# Run specs & acceptance tests and ensure that assets can compile without errors
+script:
+  - 'bundle exec rake travis'
+  - 'bundle exec rake assets:precompile'
+#  - 'gauntlt'
+# after_script: 'bundle exec guard-jasmine'
+# To stop Travis from running tests for a new commit,
+# add the following to your commit message: [ci skip]
+# You should add this when you edit documentation or comments, etc.
