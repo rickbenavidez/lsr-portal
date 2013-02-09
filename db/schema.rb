@@ -12,7 +12,6 @@
 # It's strongly recommended to check this file into your version control system.
 
 ActiveRecord::Schema.define(:version => 20130209191529) do
-
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -45,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20130209191529) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.boolean  "admin"
+    t.boolean  "advisor"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
