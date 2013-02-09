@@ -1,0 +1,10 @@
+<%= simple_form_for @event do |simpleform| %>
+  <%= simpleform.input :name %>
+  <%= simpleform.input :longitude %>
+  <%= simpleform.input :latitude %>
+  <%= simpleform.input :address %>
+  <%= simpleform.input :start_date %>
+  <%= simpleform.input :end_date %>
+
+  <%= simpleform.button :submit %>
+<% end %>
