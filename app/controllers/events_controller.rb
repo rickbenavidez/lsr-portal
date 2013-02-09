@@ -1,6 +1,10 @@
 class EventsController < ApplicationController
   before_filter :find_event, :only => [:show, :edit]
 
+  def index
+    @events = Event.all
+  end
+
   def new
     @event = Event.new
   end
