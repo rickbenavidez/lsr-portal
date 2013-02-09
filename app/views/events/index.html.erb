@@ -1,0 +1,29 @@
+<div class='row'>
+  <%= link_to 'Add Event', new_event_path, class: 'button' %>
+</div>
+<div class='row'>
+  <table>
+    <thead>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Stage</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% @events.each do |event| %>
+        <tr>
+          <td><%= event.name %></td>
+          <td><%= event.start_date %></td>
+          <td><%= event.address %></td>
+          <td><%= event.stage %></td>
+          <td>
+            <%= link_to 'edit', edit_event_path(event), class: 'button secondary' %>
+            <%= link_to 'destroy', event_path(event), method: :delete, class: 'button alert' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
