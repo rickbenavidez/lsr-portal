@@ -1,7 +1,9 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.11'
 gem 'jquery-rails'
+gem 'sqlite3'
 
+gem 'strong_parameters', '~> 0.1.6'
 gem 'cancan', '>= 1.6.8'
 gem 'devise', '>= 2.2.3'
 gem 'figaro', '>= 0.5.3'
