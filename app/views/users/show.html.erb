@@ -1,3 +1,7 @@
-<h3>User</h3>
-<p>User: <%= @user.name %></p>
-<p>Email: <%= @user.email if @user.email %></p>
+<div class="profile">
+  <%= gravatar_image_tag(@user.email, :alt => "Gravatar Image For #{@user.name}", :class => 'circle', :gravatar => { :size => 55 }) %>
+  <div class="info">
+    <span class="name"><%= @user.name %></span>
+    <span class="email"><%= @user.email %></span>
+  </div>
+</div>

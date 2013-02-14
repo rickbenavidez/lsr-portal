@@ -13,6 +13,8 @@ gem 'sendgrid', '>= 1.0.1'
 gem 'simple_form', '>= 2.0.4'
 gem 'thin', '>= 1.5.0'
 
+gem "gravatar_image_tag", "~> 1.1.3"
+
 group :development, :test do
   gem 'factory_girl_rails', '>= 4.2.0'
   gem 'rspec-rails', '>= 2.12.2'

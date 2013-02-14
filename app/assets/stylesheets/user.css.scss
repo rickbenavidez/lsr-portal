@@ -1,0 +1,33 @@
+@import "compass/css3/border-radius";
+
+.profile {
+  margin: 10px 20px;
+  height: 60px;
+
+  img {
+    height: 55px;
+    width: 55px;
+
+    &.circle {
+      float: left;
+      @include border-radius(55px);
+    }
+  }
+      
+  .info {
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    .name {
+      font-weight:bold;
+      font-size: 1.3em;
+    }
+
+    .email {
+      display: block;
+    }
+  }
+}
+
+
